@@ -1,5 +1,7 @@
 package com.movie.service.entity;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,12 +18,16 @@ public class MovieEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
+    private LocalDate releaseDate;
+    private Integer duration; 
 
     public MovieEntity() {}
     
-    public MovieEntity(Long id, String title) {
+    public MovieEntity(Long id, String title, LocalDate releaseDate, Integer duration) {
         this.id = id;
         this.title = title;
+        this.releaseDate = releaseDate;
+        this.duration = duration;
     }
 
 }

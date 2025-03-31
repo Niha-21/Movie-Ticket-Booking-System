@@ -1,5 +1,7 @@
 package com.movie.service.model;
 
+import java.time.LocalDate;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,7 +11,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class MovieDTO {
     
-    Long id;
-    String title;
+    private Long id;
+    private String title;
+    private LocalDate releaseDate;
+    private Integer duration;
 
 }

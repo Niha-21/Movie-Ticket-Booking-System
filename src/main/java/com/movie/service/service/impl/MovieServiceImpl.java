@@ -33,10 +33,10 @@ public class MovieServiceImpl implements MovieService{
     }
     
     private MovieDTO convertToDTO(MovieEntity movieEntity) {
-        return new MovieDTO(movieEntity.getId(), movieEntity.getTitle());
+        return new MovieDTO(movieEntity.getId(), movieEntity.getTitle(), movieEntity.getReleaseDate(), movieEntity.getDuration());
     }
 
     private MovieEntity convertToEntity(MovieDTO movie) {
-        return new MovieEntity(movie.getId(), movie.getTitle());
+        return new MovieEntity(movie.getId(), movie.getTitle(), movie.getReleaseDate(), movie.getDuration());
     }
 }
