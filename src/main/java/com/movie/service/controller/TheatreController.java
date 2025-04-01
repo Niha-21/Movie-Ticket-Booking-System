@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.movie.service.exception.CustomException;
 import com.movie.service.model.TheatreDTO;
 import com.movie.service.service.TheatreService;
 
@@ -24,12 +25,12 @@ public class TheatreController {
     }
 
     @GetMapping
-    public List<TheatreDTO> getAllTheatres() {
+    public List<TheatreDTO> getAllTheatres() throws CustomException {
         return theatreService.getAllTheatres();
     }
 
     @PostMapping
-    public TheatreDTO addTheatre(@RequestBody TheatreDTO theatreDTO) {
+    public TheatreDTO addTheatre(@RequestBody TheatreDTO theatreDTO) throws CustomException {
         return theatreService.addTheatre(theatreDTO);
     }
     

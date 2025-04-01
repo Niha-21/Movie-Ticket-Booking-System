@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.movie.service.exception.CustomException;
 import com.movie.service.model.ShowtimeDTO;
 import com.movie.service.service.ShowtimeService;
 
@@ -23,12 +24,12 @@ public class ShowtimeController {
     }
 
     @GetMapping("/{movieId}")
-    public List<ShowtimeDTO> getShowTimesByMovieId(@PathVariable Long movieId) {
+    public List<ShowtimeDTO> getShowTimesByMovieId(@PathVariable Long movieId) throws CustomException {
         return showtimeService.getShowTimesByMovieId(movieId);
     }
 
     @PostMapping
-    public ShowtimeDTO addShowtime(@RequestBody ShowtimeDTO showtimeDTO) {
+    public ShowtimeDTO addShowtime(@RequestBody ShowtimeDTO showtimeDTO) throws CustomException {
         return showtimeService.addShowtime(showtimeDTO);
     }
 
