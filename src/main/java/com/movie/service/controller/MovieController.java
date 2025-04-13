@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.movie.service.exception.CustomException;
 import com.movie.service.model.MovieDTO;
 import com.movie.service.service.MovieService;
 
